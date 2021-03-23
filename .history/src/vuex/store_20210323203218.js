@@ -19,14 +19,14 @@ let store = new Vuex.Store({
                 state.cart.map(function (item) {
                     if (item.article === product.article) {
                         isProductExists = true;
-                        item.quantity++;
+                        item.quantity++
                     }
                 })
                 if (!isProductExists) {
-                    state.cart.push(product);
+                    state.cart.push(product)
                 }
             } else {
-                state.cart.push(product);
+                state.cart.push(product)
             }
         },
         REMOVE_FROM_CART: (state, index) => {
