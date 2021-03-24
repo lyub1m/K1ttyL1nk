@@ -8,9 +8,9 @@
         </div>
         <div class="v-cart-item_quantity">
             <span>
-                <button class="incrementItem" @click="incrementItem">+</button>
+                <span class="incrementItem" @click="incrementItem">+</span>
                 {{cart_item_data.quantity}}
-                <button class="decrementItem" @click="decrementItem">-</button>
+                <span class="decrementItem" @click="decrementItem">-</span>
             </span>
         </div>
         <button @click="deleteFromCart">Delete</button>
@@ -71,13 +71,6 @@ export default{
 }
 .incrementItem{
     color:green;
-    font-size: 20px
-}
-.decrementItem{
-    color:red;
-    font-size: 20px
-}
-.v-cart-item_quantity{
-    font-size: 20px;
+    font-size: 14px
 }
 </style>

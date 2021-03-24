@@ -38,6 +38,8 @@ let store = new Vuex.Store({
         DECREMENT: (state, index) =>{
             if(state.cart[index].quantity > 1){
             state.cart[index].quantity--
+        }else {
+            state.cart.remove(index);
         }
         }
     },

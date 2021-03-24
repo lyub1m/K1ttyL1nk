@@ -31,13 +31,15 @@ let store = new Vuex.Store({
         },
         REMOVE_FROM_CART: (state, index) => {
             state.cart.splice(index, 1)
-        },
+        }
         INCREMENT: (state, index) =>{
             state.cart[index].quantity++
         },
         DECREMENT: (state, index) =>{
-            if(state.cart[index].quantity > 1){
+            if(state.cart[index].quantity > 0){
             state.cart[index].quantity--
+        }else {
+            state.cart[index].quantity = 0;
         }
         }
     },

@@ -36,8 +36,10 @@ let store = new Vuex.Store({
             state.cart[index].quantity++
         },
         DECREMENT: (state, index) =>{
-            if(state.cart[index].quantity > 1){
+            if(state.cart[index].quantity > 0){
             state.cart[index].quantity--
+        }else {
+            state.cart[index].quantity = 0;
         }
         }
     },

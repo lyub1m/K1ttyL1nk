@@ -62,10 +62,10 @@ export default {
         'DECREMENT_CART_ITEM'
         ]),
     increment(index){
-        this.INCREMENT_CART_ITEM(index)
+
     },
     decrement(index){
-        this.DECREMENT_CART_ITEM(index)
+        
     },
     deleteFromCart(index) {
       this.DELETE_FROM_CART(index);

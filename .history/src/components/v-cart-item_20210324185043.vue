@@ -8,9 +8,9 @@
         </div>
         <div class="v-cart-item_quantity">
             <span>
-                <button class="incrementItem" @click="incrementItem">+</button>
+                <span @click="incrementItem">+</span>
                 {{cart_item_data.quantity}}
-                <button class="decrementItem" @click="decrementItem">-</button>
+                <span @click="decrementItem">-</span>
             </span>
         </div>
         <button @click="deleteFromCart">Delete</button>
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+
+import {mapActions} from 'vuex'
 
 export default{
     name: "v-cart-item",
@@ -39,11 +41,15 @@ export default{
     },
     computed:{},
     methods: {
+        ...mapActions({
+            'INCREMENT_CART_ITEM'
+            'DECREMENT_CART_ITEM'
+        }),
         decrementItem(){
-            this.$emit('decrement')
-            },
+            this.DECREMENT_CART_ITEM()
+        },
         incrementItem(){
-            this.$emit('increment')
+            this.INCREMENT_CART_ITEM()
         },
         deleteFromCart(){
             this.$emit('deleteFromCart')
@@ -68,16 +74,5 @@ export default{
     &__image{
         max-width: 125px;
     }
-}
-.incrementItem{
-    color:green;
-    font-size: 20px
-}
-.decrementItem{
-    color:red;
-    font-size: 20px
-}
-.v-cart-item_quantity{
-    font-size: 20px;
 }
 </style>
